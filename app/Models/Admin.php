@@ -1,14 +1,17 @@
 <?php
 
-namespace App;
+namespace iHint\Models;
 
-use App\Notifications\UserResetPassword;
+use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+use iHint\Notifications\UserResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable implements Transformable
 {
-    use Notifiable;
+    use TransformableTrait, Notifiable;
 
     /**
      * The attributes that are mass assignable.

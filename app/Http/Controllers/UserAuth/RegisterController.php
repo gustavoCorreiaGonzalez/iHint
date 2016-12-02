@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\UserAuth;
+namespace iHint\Http\Controllers\UserAuth;
 
-use App\User;
+use iHint\Models\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use iHint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 

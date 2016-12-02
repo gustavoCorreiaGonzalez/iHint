@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\AdminAuth;
+namespace iHint\Http\Controllers\AdminAuth;
 
-use App\Admin;
+use iHint\Models\Admin;
 use Validator;
-use App\Http\Controllers\Controller;
+use iHint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 

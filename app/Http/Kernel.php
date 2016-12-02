@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace iHint\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
+            \iHint\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            \iHint\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -46,17 +46,17 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'user' => \App\Http\Middleware\RedirectIfNotUser::class,
-        'user.guest' => \App\Http\Middleware\RedirectIfUser::class,
-        'teacher' => \App\Http\Middleware\RedirectIfNotTeacher::class,
-        'teacher.guest' => \App\Http\Middleware\RedirectIfTeacher::class,
-        'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
-        'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
+        'user' => \iHint\Http\Middleware\RedirectIfNotUser::class,
+        'user.guest' => \iHint\Http\Middleware\RedirectIfUser::class,
+        'teacher' => \iHint\Http\Middleware\RedirectIfNotTeacher::class,
+        'teacher.guest' => \iHint\Http\Middleware\RedirectIfTeacher::class,
+        'admin' => \iHint\Http\Middleware\RedirectIfNotAdmin::class,
+        'admin.guest' => \iHint\Http\Middleware\RedirectIfAdmin::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \iHint\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

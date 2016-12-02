@@ -167,16 +167,16 @@ return [
          * Package Service Providers...
          */
 
-        //
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        iHint\Providers\AppServiceProvider::class,
+        iHint\Providers\AuthServiceProvider::class,
+        // iHint\Providers\BroadcastServiceProvider::class,
+        iHint\Providers\EventServiceProvider::class,
+        iHint\Providers\RouteServiceProvider::class,
 
     ],
 

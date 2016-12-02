@@ -1,14 +1,17 @@
 <?php
 
-namespace App;
+namespace iHint\Models;
 
-use App\Notifications\AdminResetPassword;
+use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+use iHint\Notifications\UserResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Authenticatable
+class Teacher extends Authenticatable implements Transformable
 {
-    use Notifiable;
+    use TransformableTrait, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -36,6 +39,6 @@ class Admin extends Authenticatable
      */
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new AdminResetPassword($token));
+        $this->notify(new UserResetPassword($token));
     }
 }

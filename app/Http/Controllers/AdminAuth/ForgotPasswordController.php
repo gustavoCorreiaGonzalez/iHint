@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\AdminAuth;
+namespace iHint\Http\Controllers\AdminAuth;
 
-use App\Http\Controllers\Controller;
+use iHint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Password;
 

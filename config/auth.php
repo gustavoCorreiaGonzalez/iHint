@@ -82,17 +82,17 @@ return [
     'providers' => [
         'teachers' => [
             'driver' => 'eloquent',
-            'model' => App\Teacher::class,
+            'model' => iHint\Models\Teacher::class,
         ],
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => iHint\Models\Admin::class,
         ],
 
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => iHint\Models\User::class,
         ],
 
         // 'users' => [

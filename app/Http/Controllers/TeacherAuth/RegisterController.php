@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\TeacherAuth;
+namespace iHint\Http\Controllers\TeacherAuth;
 
-use App\Teacher;
+use iHint\Models\Teacher;
 use Validator;
-use App\Http\Controllers\Controller;
+use iHint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 

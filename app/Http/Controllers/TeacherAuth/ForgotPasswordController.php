@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\TeacherAuth;
+namespace iHint\Http\Controllers\TeacherAuth;
 
-use App\Http\Controllers\Controller;
+use iHint\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Password;
 
