@@ -34,7 +34,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/user') }}">
+                <a class="navbar-brand" href="{{ url('/user/home') }}">
                     {{ config('app.name', 'Laravel Multi Auth Guard') }}: User
                 </a>
             </div>
@@ -42,7 +42,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    @if (!Auth::guest())
+                        <li><a href="{{ route('user.exercises.listExercises') }}">Exercícios</a></li>
+                        <li><a href="{{ route('user.hints.index') }}">Dicas</a></li>
+                        <li><a href="">Diários</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

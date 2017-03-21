@@ -34,7 +34,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/admin') }}">
+                <a class="navbar-brand" href="{{ url('/admin/home') }}">
                     {{ config('app.name', 'Laravel Multi Auth Guard') }}: Admin
                 </a>
             </div>
@@ -42,7 +42,14 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    @if (!Auth::guest())
+                        <li><a href="{{ route('admin.users.index') }}">Usuários</a></li>
+                        <li><a href="">Professores</a></li>
+                        <li><a href="{{ route('admin.exercises.index') }}">Exercícios</a></li>
+                        <li><a href="{{ route('admin.exercisetype.index') }}">Tipo Exercícios</a></li>
+                        <!--<li><a href="{{ route('admin.exerciselist.index') }}">Lista de Exercícios</a></li>-->
+                        <li><a href="{{ route('admin.answers.index') }}">Respostas</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

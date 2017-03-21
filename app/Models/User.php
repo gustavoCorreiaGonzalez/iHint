@@ -41,4 +41,22 @@ class User extends Authenticatable implements Transformable
     {
         $this->notify(new UserResetPassword($token));
     }
+
+    /**
+     * Realiza o relacionamento hasOne com a classe Answer
+     * @return [type] [description]
+     */
+    public function answer()
+    {
+        return $this->hasOne(Answer::class);
+    }
+
+    /**
+     * Realiza o relacionamento hasOne com a classe Hint
+     * @return [type] [description]
+     */
+    public function hint()
+    {
+        return $this->hasOne(Hint::class);
+    }
 }
