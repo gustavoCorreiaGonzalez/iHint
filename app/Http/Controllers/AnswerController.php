@@ -90,13 +90,13 @@ class AnswerController extends Controller
 
         $data['answer'] = $storage_path;
 
+        $file->move($storage_path, $file_name);
+
         $metrics = AnswerController::caluculateMetrics($exercise_id, $storage_path, $file_name);
 
         $data = array_collapse([$data, $metrics]);
 
         $this->repository->create($data);
-
-        $file->move($storage_path, $file_name);
 
         $result = AnswerController::validateExercise($exercise_id, $storage_path, $file_name);
 

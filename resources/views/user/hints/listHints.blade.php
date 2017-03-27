@@ -1,8 +1,8 @@
 <div class="col-md-5">
-	@if(!$hints == [])
+	@if(!strlen($hints))
 		<h3>Pedir Dicas</h3>
 	@else
-		<h3>Execício sem Dicas</h3>
+		<h3>Todas as Dicas utilizadas!</h3>
 	@endif
 	
 	@foreach($hints as $hint)

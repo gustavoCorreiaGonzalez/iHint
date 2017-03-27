@@ -11,6 +11,7 @@ use iHint\Repositories\ExerciseRepository;
 use iHint\Models\ExerciseType;
 use iHint\Models\Hint;
 use BD;
+use Auth;
 
 class ExerciseController extends Controller
 {
@@ -83,16 +84,18 @@ class ExerciseController extends Controller
     {
         $exercise = $this->repository->find($id);
 
+        $usuario_id = \Auth::user()->id;
+
         $hints = \DB::table('hints')
-            ->whereNotIn('id', function ($query) use ($exercise) {
+            ->where('user_id', '!=', $usuario_id)
+            ->whereNotIn('id', function ($query) use ($exercise, $usuario_id) {
                 $query->select(\DB::raw('hint_id'))
-                      ->from('log_hints')
-                      ->whereRaw('user_id = 1 AND exercise_id = '.$exercise->id);
-            })->get();
-
-        //dd($hints);
-
-        //$hints = Hint::all();
+                    ->from('log_hints')
+                    ->whereRaw('user_id = '.$usuario_id.' AND exercise_id = '.$exercise->id);
+            })
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
 
         return view('user.exercises.performExercise', compact('exercise', 'hints'));
     }
