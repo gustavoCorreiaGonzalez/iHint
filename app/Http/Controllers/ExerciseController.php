@@ -45,6 +45,8 @@ class ExerciseController extends Controller
     {
         $data = $request->all();
 
+        dd($data);
+
         $this->repository->create($data);
 
         return redirect()->route('admin.exercises.index');

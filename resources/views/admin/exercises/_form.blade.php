@@ -12,6 +12,47 @@
 
 <div class="form-group">
 	{!! Form::label('Answer', 'Resposta:') !!}
-	{!! Form::text('answer', null, ['class'=>'form-control ']) !!}
 </div>
 
+<div class="form-group">
+	<a class="btn btn-primary" href="javascript:void(0)" id="addInput">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		Adicionar Resposta
+	</a>
+</div>
+
+<div class="form-group">
+	<div id="dynamicDiv">
+		{!! Form::label('In', 'Entrada:') !!}
+		{!! Form::text('answerInput', null, ['class'=>'form-control', 'name'=>'answerInput[]']) !!}
+		{!! Form::label('Out', 'Saida:') !!}
+		{!! Form::text('answerOutput', null, ['class'=>'form-control', 'name'=>'answerOutput[]']) !!}
+	</div>
+</div>
+	
+	<script>
+		$(function () {
+		    var scntDiv = $('#dynamicDiv');
+
+		    $(document).on('click', '#addInput', function () {
+		        $('<p>'+
+						'{!! Form::label('In', 'Entrada') !!}'+
+						'{!! Form::text('answerInput', null, ['class'=>'form-control', 'name'=>'answerInput[]']) !!}'+
+						'{!! Form::label('Out', 'Saida') !!}'+
+						'{!! Form::text('answerOutput', null, ['class'=>'form-control', 'name'=>'answerOutput[]']) !!}'+
+						'</br>'+
+	        			'<a class="btn btn-danger" href="javascript:void(0)" id="remInput">'+
+							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
+							'Remover Campo'+
+	        			'</a>'+
+	        		'</div>'+
+				'</p>').appendTo(scntDiv);
+		        return false;
+		    });
+
+		    $(document).on('click', '#remInput', function () {
+	            $(this).parents('p').remove();
+		        return false;
+		    });
+		});
+	</script>
