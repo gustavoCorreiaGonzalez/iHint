@@ -94,8 +94,6 @@ class AnswerController extends Controller
 
         $data = array_collapse([$data, $metrics]);
 
-        dd($data);
-
         $this->repository->create($data);
 
         $file->move($storage_path, $file_name);

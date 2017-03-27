@@ -12,6 +12,9 @@ class Answer extends Model implements Transformable
 
     protected $fillable = [
     	'answer',
+        'number_of_modules',
+        'lines_of_code',
+        'cyclomatic_complexity',
     	'user_id',
     	'exercise_id'
     ];

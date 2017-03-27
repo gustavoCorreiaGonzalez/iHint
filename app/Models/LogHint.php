@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
-class Hint extends Model implements Transformable
+class LogHint extends Model implements Transformable
 {
     use TransformableTrait;
 
     protected $fillable = [
-    	'description',
     	'user_id',
+    	'hint_id',
     	'exercise_id'
     ];
 
@@ -34,12 +34,12 @@ class Hint extends Model implements Transformable
         return $this->belongsTo(Exercise::class);
     }
 
-    /**
-     * Realiza o relacionamento hasOne com a classe LogHint
+	/**
+     * Realiza o relacionamento belongsTo com a classe Hint
      * @return [type] [description]
      */
-    public function logHint()
+    public function hint()
     {
-        return $this->hasOne(LogHint::class);
+        return $this->belongsTo(Hint::class);
     }
 }

@@ -54,6 +54,11 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'iHint\Repositories\LogHintRepository',
+            'iHint\Repositories\LogHintRepositoryEloquent'
+        );
+
+        $this->app->bind(
             'iHint\Repositories\TeacherRepository',
             'iHint\Repositories\TeacherRepositoryEloquent'
         );

@@ -27,9 +27,6 @@ class HintController extends Controller
     {
         $hints = $this->repository->paginate();
 
-        //$hints = $hints->with('user_id', Auth::user()->id);
-
-        //dd($hints);
         return view('user.hints.index', compact('hints'));
     }
 

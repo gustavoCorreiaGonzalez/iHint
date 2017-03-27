@@ -59,4 +59,13 @@ class User extends Authenticatable implements Transformable
     {
         return $this->hasOne(Hint::class);
     }
+
+    /**
+     * Realiza o relacionamento hasOne com a classe LogHint
+     * @return [type] [description]
+     */
+    public function logHint()
+    {
+        return $this->hasOne(LogHint::class);
+    }
 }

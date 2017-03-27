@@ -106,5 +106,7 @@ Route::group(['middleware' => ['auth:user'], 'prefix' => 'user'], function () {
   Route::post('/hint/update/{id}', 'HintController@update')->name('user.hints.update');
   Route::post('/hint/store', 'HintController@store')->name('user.hints.store');
   Route::get('/hint/destroy/{id}', 'HintController@destroy')->name('user.hints.destroy');
+
+  Route::post('/hint/logStore', 'LogHintController@store')->name('user.loghints.store');
 });
 

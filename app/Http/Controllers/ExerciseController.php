@@ -10,6 +10,7 @@ use iHint\Http\Controllers\Controller;
 use iHint\Repositories\ExerciseRepository;
 use iHint\Models\ExerciseType;
 use iHint\Models\Hint;
+use BD;
 
 class ExerciseController extends Controller
 {
@@ -81,7 +82,17 @@ class ExerciseController extends Controller
     public function performExercise($id)
     {
         $exercise = $this->repository->find($id);
-        $hints = Hint::all();
+
+        $hints = \DB::table('hints')
+            ->whereNotIn('id', function ($query) use ($exercise) {
+                $query->select(\DB::raw('hint_id'))
+                      ->from('log_hints')
+                      ->whereRaw('user_id = 1 AND exercise_id = '.$exercise->id);
+            })->get();
+
+        //dd($hints);
+
+        //$hints = Hint::all();
 
         return view('user.exercises.performExercise', compact('exercise', 'hints'));
     }
