@@ -24,22 +24,27 @@
 <div class="form-group">
 	<div id="dynamicDiv">
 		{!! Form::label('In', 'Entrada:') !!}
-		{!! Form::text('answerInput', null, ['class'=>'form-control', 'name'=>'answerInput[]']) !!}
+		{!! Form::text('answer', null, ['class'=>'form-control', 'name'=>'answer[0][answerInput]']) !!}
 		{!! Form::label('Out', 'Saida:') !!}
-		{!! Form::text('answerOutput', null, ['class'=>'form-control', 'name'=>'answerOutput[]']) !!}
+		{!! Form::text('answer', null, ['class'=>'form-control', 'name'=>'answer[0][answerOutput]']) !!}
 	</div>
 </div>
 	
 	<script>
+		
 		$(function () {
+			var i = 0;
+
 		    var scntDiv = $('#dynamicDiv');
 
 		    $(document).on('click', '#addInput', function () {
+		    	i++;
+
 		        $('<p>'+
-						'{!! Form::label('In', 'Entrada') !!}'+
-						'{!! Form::text('answerInput', null, ['class'=>'form-control', 'name'=>'answerInput[]']) !!}'+
-						'{!! Form::label('Out', 'Saida') !!}'+
-						'{!! Form::text('answerOutput', null, ['class'=>'form-control', 'name'=>'answerOutput[]']) !!}'+
+						'<label for="In">Entrada:</label>'+
+		        		'<input class="form-control" name="answer['+i+'][answerInput]" type="text">'+
+		        		'<label for="Out">Saida:</label>'+
+		        		'<input class="form-control" name="answer['+i+'][answerOutput]" type="text">'+
 						'</br>'+
 	        			'<a class="btn btn-danger" href="javascript:void(0)" id="remInput">'+
 							'<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> '+
@@ -52,6 +57,7 @@
 
 		    $(document).on('click', '#remInput', function () {
 	            $(this).parents('p').remove();
+	            i--;
 		        return false;
 		    });
 		});

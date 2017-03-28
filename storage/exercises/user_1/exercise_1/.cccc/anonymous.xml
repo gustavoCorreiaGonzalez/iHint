@@ -26,10 +26,10 @@
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>main()</name>
+<name>main(...)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Eexercicio1.c" line="4" />
+<source_reference file="exercicio1.c" line="4" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]){
-  printf("teste1");
-  return 0;
+int main (int argc, char* argv[]){
+    printf("%s", argv[1]);
+    return(0);
 }

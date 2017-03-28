@@ -73,7 +73,7 @@ class AnswerController extends Controller
 
             $file_name = $file->getClientOriginalName();
 
-            $file_name = 'E'.$file_name;
+            //$file_name = 'E'.$file_name;
         } else {
             $file = $request->file('answer');
 
@@ -100,14 +100,13 @@ class AnswerController extends Controller
 
         $result = AnswerController::validateExercise($exercise_id, $storage_path, $file_name);
 
-        if ($result == true)         
+        if ($result == 100)         
             return redirect()->route('user.hints.create',['id' => $exercise_id]);  
         else
-            return back()->with('failure', 'Exercício está errado!');;
+            return back()->with('failure', $result);;
 
         /* O que tem pra fazer ainda
-            
-
+        
         Cada submissão, tanto correta ou incorreta, é gravada no banco de dados na forma
         de log, sendo salvo os dados: a usuário que realizou o exercício, todas as submissões, os erros
         cometidos, o tempo demorado para obter sucesso no exercício, data e dicas utilizadas.
@@ -117,16 +116,26 @@ class AnswerController extends Controller
 
     public function validateExercise($exercise_id, $storage_path, $file_name)
     {
-        exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');
-
-        $result = exec('cd '.$storage_path.' && ./teste');
-
         $exercise = Exercise::find($exercise_id);
 
-        if ($result == $exercise['answer'])
-            return true;
-        else
-            return false;
+        $answer = unserialize($exercise['answer']);
+
+        $number_of_answers = count($answer);
+
+        exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');
+
+        $number_of_hits = 0;
+
+        for ($i = 0; $i < $number_of_answers; $i++) {
+            $result = exec('cd '.$storage_path.' && ./teste '.$answer[$i]['answerInput']);
+
+            if ($result == $answer[$i]['answerOutput'])
+                $number_of_hits++;
+        }
+
+        $percentage_of_hit = ($number_of_hits/$number_of_answers)*100;
+
+        return $percentage_of_hit;
     }
 
     public function caluculateMetrics($exercise_id, $storage_path, $file_name)

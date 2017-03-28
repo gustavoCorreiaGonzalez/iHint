@@ -45,7 +45,9 @@ class ExerciseController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
+        $data['answer'] = serialize($data['answer']);
+
+        //$teste = unserialize($data['answer']);
 
         $this->repository->create($data);
 

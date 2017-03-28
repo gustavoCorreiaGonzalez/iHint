@@ -9,7 +9,16 @@
 					<span aria-hidden="true">×</span>
 				</button>
 				<strong>Falhou!</strong>
-				{{Session::get('failure')}}
+				Exercício está errado!
+
+				</br>
+				
+				Testes acertados!
+				<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{Session::get('failure')}}%;">
+				    {{Session::get('failure')}}
+				  </div>
+				</div>
 			</div>
 		@endif
 

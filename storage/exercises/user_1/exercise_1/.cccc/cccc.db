@@ -11,6 +11,6 @@ CCCC_Module@long@builtin@
 CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@void@builtin@
 CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
-CCCC_Member@anonymous@main@@()@
-CCCC_MemExt@anonymous@main@@()@Eexercicio1.c@4@definition@F????@LOC:4 COM:0 MVG:1@?@d@
-CCCC_RejExt@Eexercicio1.c@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
+CCCC_Member@anonymous@main@@(...)@
+CCCC_MemExt@anonymous@main@@(...)@exercicio1.c@4@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_RejExt@exercicio1.c@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
