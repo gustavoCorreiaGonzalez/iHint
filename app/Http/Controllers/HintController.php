@@ -40,6 +40,10 @@ class HintController extends Controller
         $data = $request->all();
         $this->repository->create($data);
 
+        $exercise_id = $data['exercise_id'];
+
+        return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'));
+
         return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica enviado com sucesso!');
     }
 

@@ -9,6 +9,7 @@ use iHint\Http\Requests\AnswerRequest;
 use iHint\Http\Controllers\Controller;
 use iHint\Repositories\AnswerRepository;
 use iHint\Models\Exercise;
+use Auth;
 
 class AnswerController extends Controller
 {
@@ -88,7 +89,7 @@ class AnswerController extends Controller
 
         $data = $request->all();
 
-        $data['answer'] = $storage_path;
+        $data['answer'] = $storage_path.'/'.$file_name;;
 
         $file->move($storage_path, $file_name);
 
@@ -150,6 +151,22 @@ class AnswerController extends Controller
         ]);
 
         return $metrics;
+    }
+
+    public function usersSolucions($exercise_id)
+    {
+        $user_id = \Auth::user()->id;
+
+        $exercise = \DB::table('answers')
+            ->whereRaw('exercise_id = '.$exercise_id.' AND user_id != '.$user_id)
+            ->inRandomOrder()
+            ->first();        
+
+        dd($exercise->answer);
+
+        $teste = \File::get(storage_path('/exercises/user_1/exercise_1/exercicio1.c'));
+
+        return view('user.exercises.users_solucions', compact('teste'));
     }
 }
 

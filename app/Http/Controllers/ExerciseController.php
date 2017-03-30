@@ -47,8 +47,6 @@ class ExerciseController extends Controller
 
         $data['answer'] = serialize($data['answer']);
 
-        //$teste = unserialize($data['answer']);
-
         $this->repository->create($data);
 
         return redirect()->route('admin.exercises.index');
@@ -103,4 +101,5 @@ class ExerciseController extends Controller
 
         return view('user.exercises.performExercise', compact('exercise', 'hints'));
     }
+
 }
