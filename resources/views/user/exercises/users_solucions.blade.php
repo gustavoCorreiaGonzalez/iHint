@@ -6,7 +6,7 @@
 		
 		@include('errors._check')
 
-		{!! Form::open(['route'=>'user.hints.store', 'class'=>'form']) !!}
+		{!! Form::open(['route'=>'user.hints.storeUsersSolucions', 'class'=>'form']) !!}
 		
 		@include('user.exercises._form2')
 

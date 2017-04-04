@@ -80,7 +80,7 @@
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/gustavoCorreiaGonzalez/iHint">GitHub</a>
                 </div>
             </div>
         </div>

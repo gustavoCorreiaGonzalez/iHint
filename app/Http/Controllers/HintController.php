@@ -43,8 +43,6 @@ class HintController extends Controller
         $exercise_id = $data['exercise_id'];
 
         return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'));
-
-        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica enviado com sucesso!');
     }
 
     public function edit($id)
@@ -69,4 +67,13 @@ class HintController extends Controller
         return redirect()->route('user.hints.index');
     }
 
+    public function storeUsersSolucions(HintRequest $request)
+    {
+        $data = $request->all();
+        $this->repository->create($data);
+
+        $exercise_id = $data['exercise_id'];
+
+        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dicas enviados com sucesso!');
+    }
 }

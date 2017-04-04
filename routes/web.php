@@ -110,7 +110,7 @@ Route::group(['middleware' => ['auth:user'], 'prefix' => 'user'], function () {
 
 
   Route::get('/usersSolucions/{id}', 'AnswerController@usersSolucions')->name('user.exercises.usersSolucions');
-
+  Route::post('/usersSolucions/store', 'HintController@storeUsersSolucions')->name('user.hints.storeUsersSolucions');
 
 });
 

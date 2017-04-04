@@ -89,7 +89,7 @@ class AnswerController extends Controller
 
         $data = $request->all();
 
-        $data['answer'] = $storage_path.'/'.$file_name;;
+        $data['answer'] = $storage_path.'/'.$file_name;
 
         $file->move($storage_path, $file_name);
 
@@ -157,16 +157,21 @@ class AnswerController extends Controller
     {
         $user_id = \Auth::user()->id;
 
-        $exercise = \DB::table('answers')
+        $result = \DB::table('answers')
+            ->select('answer', 'user_id')
             ->whereRaw('exercise_id = '.$exercise_id.' AND user_id != '.$user_id)
             ->inRandomOrder()
-            ->first();        
+            ->first();
 
-        dd($exercise->answer);
+        $exercise = \File::get($result->answer);
 
-        $teste = \File::get(storage_path('/exercises/user_1/exercise_1/exercicio1.c'));
+        $user_id_exercise = $result->user_id;
 
-        return view('user.exercises.users_solucions', compact('teste'));
+        if ($exercise == null) {
+            return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica enviado com sucesso!');
+        } else {
+            return view('user.exercises.users_solucions', compact('exercise', 'user_id_exercise', 'exercise_id'));
+        }
     }
 }
 
