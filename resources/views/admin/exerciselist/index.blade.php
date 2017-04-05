@@ -4,29 +4,29 @@
 	<div class="container">
 		<h3>Lista de Exercícios</h3>
 
-		<a href="{{ route('admin.exercises.create') }}" class="btn btn-default">Novo exercício</a>
+		<a href="{{ route('admin.exerciselist.create') }}" class="btn btn-default">Nova Lista</a>
 		<br><br>
 		
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Exercício</th>
+					<th>Lista</th>
 					<th>Ação</th>
 				</tr>
 			</thead>
 
-			@foreach($exercises as $exercise)
+			@foreach($exerciselists as $exerciselist)
 			<tbody>
 				<tr>
-					<td>{{ $exercise->id }}</td>
-					<td>{{ $exercise->exercise }}</td>
+					<td>{{ $exerciselist->id }}</td>
+					<td>{{ $exerciselist->topic }}</td>
 					<td>
-						<a href="{{ route('admin.exercises.edit', ['id'=>$exercise->id]) }}" class="btn btn-default btn-sm">
+						<a href="{{ route('admin.exerciselist.edit', ['id'=>$exerciselist->id]) }}" class="btn btn-default btn-sm">
 							Editar
 						</a>
 
-						<a href="{{ route('admin.exercises.destroy', ['id'=>$exercise->id]) }}" class="btn btn-default btn-sm">
+						<a href="{{ route('admin.exerciselist.destroy', ['id'=>$exerciselist->id]) }}" class="btn btn-default btn-sm">
 							Remover
 						</a>
 					</td>
@@ -35,7 +35,7 @@
 			@endforeach
 		</table>
 
-		{!! $exercises->render() !!}
+		{!! $exerciselists->render() !!}
 
 	</div>
 

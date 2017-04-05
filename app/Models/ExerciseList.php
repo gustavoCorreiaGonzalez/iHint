@@ -11,16 +11,8 @@ class ExerciseList extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-        'topic'
+        'topic',
+        'exercises'
     ];
-
-    /**
-     * Realiza o relacionamento hasOne com a classe Exercise
-     * @return [type] [description]
-     */
-    public function exercise()
-    {
-        return $this->hasOne(Exercise::class);
-    }
 
 }

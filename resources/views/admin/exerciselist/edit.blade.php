@@ -2,16 +2,16 @@
 
 @section('content')
 	<div class="container">
-		<h3>Editando exercício: {{ $exercise->exercise }}</h3>
+		<h3>Editando lista: {{ $exerciselist->id }}</h3>
 		
 		@include('errors._check')
 
-		{!! Form::model($exercise, ['route'=>['admin.exercises.update', $exercise->id], 'class'=>'form']) !!}
+		{!! Form::model($exerciselist, ['route'=>['admin.exerciselist.update', $exerciselist->id], 'class'=>'form']) !!}
 
-		@include('admin.exercises._form')
+		@include('admin.exerciselist._form')
 
 		<div class="form-group">
-			{!! Form::submit('Salvar exercício', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Salvar lista', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

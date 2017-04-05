@@ -17,8 +17,6 @@ class CreateExercisesTable extends Migration
             $table->increments('id');
             $table->integer('exercisetype_id')->unsigned();
             $table->foreign('exercisetype_id')->references('id')->on('exercise_types');
-            //$table->integer('exerciselist_id')->unsigned();
-            //$table->foreign('exerciselist_id')->references('id')->on('exercise_lists');
             $table->text('enunciation');
             $table->text('answer'); 
             $table->timestamps();

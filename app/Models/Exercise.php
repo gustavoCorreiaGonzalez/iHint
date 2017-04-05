@@ -27,15 +27,6 @@ class Exercise extends Model implements Transformable
     }
 
     /**
-     * Realiza o relacionamento belongsTo com a classe ExerciseList
-     * @return [type] [description]
-     */
-    public function exerciselist()
-    {
-        return $this->belongsTo(ExerciseLevel::class);
-    }
-
-    /**
      * Realiza o relacionamento hasOne com a classe Answer
      * @return [type] [description]
      */

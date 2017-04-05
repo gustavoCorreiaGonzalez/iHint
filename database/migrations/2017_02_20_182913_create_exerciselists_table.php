@@ -15,6 +15,7 @@ class CreateExerciselistsTable extends Migration
         Schema::create('exercise_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('topic');
+            $table->string('exercises');
             $table->timestamps();
         });
     }

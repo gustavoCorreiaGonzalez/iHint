@@ -47,7 +47,7 @@
                         <li><a href="">Professores</a></li>
                         <li><a href="{{ route('admin.exercises.index') }}">Exercícios</a></li>
                         <li><a href="{{ route('admin.exercisetype.index') }}">Tipo Exercícios</a></li>
-                        <!--<li><a href="{{ route('admin.exerciselist.index') }}">Lista de Exercícios</a></li>-->
+                        <li><a href="{{ route('admin.exerciselist.index') }}">Lista de Exercícios</a></li>
                         <li><a href="{{ route('admin.answers.index') }}">Respostas</a></li>
                     @endif
                 </ul>

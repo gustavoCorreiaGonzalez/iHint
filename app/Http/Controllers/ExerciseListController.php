@@ -8,6 +8,7 @@ use iHint\Http\Requests;
 use iHint\Http\Requests\AdminExerciseListRequest;
 use iHint\Http\Controllers\Controller;
 use iHint\Repositories\ExerciseListRepository;
+use iHint\Models\Exercise;
 
 class ExerciseListController extends Controller
 {
@@ -31,12 +32,17 @@ class ExerciseListController extends Controller
 
     public function create()
     {
-        return view('admin.exerciselist.create');
+        $exercises = Exercise::all();
+
+        return view('admin.exerciselist.create', compact('exercises'));
     }
 
     public function store(AdminExerciseListRequest $request)
     {
         $data = $request->all();
+
+        $data['exercises'] = serialize($data['exercises']);
+
         $this->repository->create($data);
 
         return redirect()->route('admin.exerciselist.index');
@@ -44,9 +50,11 @@ class ExerciseListController extends Controller
 
     public function edit($id)
     {
+        $exercises = Exercise::all();
+
         $exerciselist = $this->repository->find($id);
 
-        return view('admin.exerciselist.edit', compact('exercise'));
+        return view('admin.exerciselist.edit', compact('exerciselist','exercises'));
     }
 
     public function update(AdminExerciseListRequest $request, $id)
