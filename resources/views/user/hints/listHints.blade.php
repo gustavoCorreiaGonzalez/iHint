@@ -2,7 +2,7 @@
 	@if(!strlen($hints))
 		<h3>Pedir Dicas</h3>
 	@else
-		<h3>Todas as Dicas utilizadas!</h3>
+		<h3>Sem Dicas!</h3>
 	@endif
 	
 	@foreach($hints as $hint)

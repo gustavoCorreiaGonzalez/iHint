@@ -17,9 +17,17 @@
     <div class="panel-body">
         <div class="list-group">
 
+			<?php $count = 0 ?>
+
             @foreach($exercises as $exercise)
+				<?php $count++ ?>
+
                 <a href="{{ route('user.exercises.performExercise', ['id'=>$exercise->id]) }}" class="list-group-item">Exercício {{ $exercise->id }} </a>
             @endforeach
+
+            @if ($count == 0) 
+				Todos os exercícios foram realizados!
+            @endif
 
             {!! $exercises->render() !!}
 

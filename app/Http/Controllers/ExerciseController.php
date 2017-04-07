@@ -77,8 +77,16 @@ class ExerciseController extends Controller
 
     public function listExercises()
     {
-        $exercises = $this->repository->paginate();
+        $usuario_id = \Auth::user()->id;
 
+        $exercises = \DB::table('exercises')
+            ->whereNotIn('id', function ($query) use ($usuario_id) {
+                $query->select(\DB::raw('exercise_id'))
+                    ->from('answers')
+                    ->whereRaw('exercise_id = exercises.id AND user_id = '.$usuario_id);
+            })
+            ->paginate();
+            
         return view('user.exercises.listExercises', compact('exercises'));   
     }
 

@@ -163,13 +163,13 @@ class AnswerController extends Controller
             ->inRandomOrder()
             ->first();
 
-        $exercise = \File::get($result->answer);
-
-        $user_id_exercise = $result->user_id;
-
-        if ($exercise == null) {
+        if ($result == null) {
             return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica enviado com sucesso!');
         } else {
+            $exercise = \File::get($result->answer);
+
+            $user_id_exercise = $result->user_id;
+
             return view('user.exercises.users_solucions', compact('exercise', 'user_id_exercise', 'exercise_id'));
         }
     }
