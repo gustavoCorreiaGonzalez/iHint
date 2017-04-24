@@ -42,7 +42,7 @@ class HintController extends Controller
 
         $exercise_id = $data['exercise_id'];
 
-        return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'));
+        return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'))->with('success', 'Successfully Sent Hint!');
     }
 
     public function edit($id)

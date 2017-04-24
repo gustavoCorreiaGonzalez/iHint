@@ -102,9 +102,9 @@ class AnswerController extends Controller
         $result = AnswerController::validateExercise($exercise_id, $storage_path, $file_name);
 
         if ($result == 100)         
-            return redirect()->route('user.hints.create',['id' => $exercise_id]);  
+            return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Successfully Sent Exercise!'); 
         else
-            return back()->with('failure', $result);;
+            return back()->with('failure', $result);
 
         /* O que tem pra fazer ainda
         
