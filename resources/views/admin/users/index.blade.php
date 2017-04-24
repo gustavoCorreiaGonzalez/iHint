@@ -2,17 +2,17 @@
 
 @section('content')
 	<div class="container">
-		<h3>Usuários</h3>
+		<h3>Users</h3>
 
-		<a href="{{ route('admin.users.create') }}" class="btn btn-default">Novo Usuário</a>
-		<br><br>
+		<!-- <a href="{{ route('admin.users.create') }}" class="btn btn-default">New User</a>
+		<br><br> -->
 		
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Nome</th>
-					<th>Ação</th>
+					<th>Name</th>
+					<!-- <th>Action</th> -->
 				</tr>
 			</thead>
 
@@ -21,15 +21,15 @@
 				<tr>
 					<td>{{ $user->id }}</td>
 					<td>{{ $user->name }}</td>
-					<td>
+					<!-- <td>
 						<a href="{{ route('admin.users.edit', ['id'=>$user->id]) }}" class="btn btn-default btn-sm">
-							Editar
+							Edit
 						</a>
-
+					
 						<a href="{{ route('admin.users.destroy', ['id'=>$user->id]) }}" class="btn btn-default btn-sm">
-							Remover
+							Remove
 						</a>
-					</td>
+					</td> -->
 				</tr>
 			</tbody>
 			@endforeach

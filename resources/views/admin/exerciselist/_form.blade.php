@@ -32,8 +32,8 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Exercício</th>
-				<th>Ação</th>
+				<th>Exercise</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		@foreach($exercises as $exercise)
@@ -44,13 +44,13 @@
 				<td>
 					<div id="add{{ $exercise->id }}" style="display: block;">
 						<a onclick="append_array_exercises({{ $exercise->id }})" class="btn btn-default btn-sm">
-							Adicionar a lista
+							Add to list
 						</a>	
 					</div>
 					
 					<div id="remove{{ $exercise->id }}" style="display: none;">
 						<a onclick="remove_array_exercises({{ $exercise->id }})" class="btn btn-default btn-sm">
-							Remover da lista
+							Remove to list
 						</a>
 					</div>
 				</td>
@@ -61,7 +61,7 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('nameList', 'Nome da Lista:') !!}
+	{!! Form::label('nameList', 'List Name:') !!}
 	{!! Form::text('topic', null, ['class'=>'form-control ']) !!}
 	{!! Form::hidden('exercises') !!}
 </div>

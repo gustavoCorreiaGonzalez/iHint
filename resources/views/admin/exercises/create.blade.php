@@ -6,7 +6,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	
 	<div class="container">
-		<h3>Novo exercício</h3>
+		<h3>New Exercise</h3>
 
 		@include('errors._check')
 
@@ -15,7 +15,7 @@
 		@include('admin.exercises._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar exercício', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Create Exercise', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

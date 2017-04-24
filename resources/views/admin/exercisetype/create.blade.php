@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Novo tipo</h3>
+		<h3>New Type</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.exercisetype._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar tipo', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Create Type', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

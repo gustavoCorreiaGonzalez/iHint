@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Editando resposta: {{ $answer->answer }}</h3>
+		<h3>Editing Answer: {{ $answer->answer }}</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.answers._form')
 
 		<div class="form-group">
-			{!! Form::submit('Salvar resposta', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Save Answer', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

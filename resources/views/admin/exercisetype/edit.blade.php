@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Editando tipo: {{ $exercisetype->exercisetype }}</h3>
+		<h3>Editing Type: {{ $exercisetype->exercisetype }}</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.exercisetype._form')
 
 		<div class="form-group">
-			{!! Form::submit('Salvar tipo', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Save Type', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Editando exercício: {{ $exercise->exercise }}</h3>
+		<h3>Editing Exercise: {{ $exercise->exercise }}</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.exercises._form')
 
 		<div class="form-group">
-			{!! Form::submit('Salvar exercício', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Save Exercise', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

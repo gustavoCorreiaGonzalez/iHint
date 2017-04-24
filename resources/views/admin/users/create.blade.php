@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Novo Usuário</h3>
+		<h3>New User</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.users._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar Usuário', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Create User', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

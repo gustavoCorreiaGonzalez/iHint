@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Nova resposta</h3>
+		<h3>New Answer</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.answers._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar resposta', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Create Answer', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

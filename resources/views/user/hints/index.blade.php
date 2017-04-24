@@ -8,9 +8,9 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>ID Exercício</th>
-					<th>Descrição</th>
-					<th>Ação</th>
+					<th>ID Exercise</th>
+					<th>Description</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 
@@ -22,11 +22,11 @@
 					<td>{{ $hint->description }}</td>
 					<td>
 						<a href="{{ route('user.hints.edit', ['id'=>$hint->id]) }}" class="btn btn-default btn-sm">
-							Editar
+							Edit
 						</a>
 
 						<a href="{{ route('user.hints.destroy', ['id'=>$hint->id]) }}" class="btn btn-default btn-sm">
-							Remover
+							Remove
 						</a>
 					</td>
 				</tr>

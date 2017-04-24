@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Nova Dica</h3>
+		<h3>New Hint</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('user.hints._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar Dica', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Save Hint', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

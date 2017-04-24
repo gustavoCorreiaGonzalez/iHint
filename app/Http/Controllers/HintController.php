@@ -74,6 +74,6 @@ class HintController extends Controller
 
         $exercise_id = $data['exercise_id'];
 
-        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dicas enviados com sucesso!');
+        return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
     }
 }

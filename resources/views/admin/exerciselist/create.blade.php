@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Exercícios</h3>
+		<h3>Exercises</h3>
 
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.exerciselist._form')
 
 		<div class="form-group">
-			{!! Form::submit('Criar lista', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Create List', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

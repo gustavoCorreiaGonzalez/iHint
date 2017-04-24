@@ -8,12 +8,12 @@
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<strong>Falhou!</strong>
-				Exercício está errado!
+				<strong>Failed!</strong>
+				Exercise is wrong!
 
 				</br>
 				
-				Testes acertados!
+				Successful tests!
 				<div class="progress">
 				  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{Session::get('failure')}}%;">
 				    {{Session::get('failure')}}
@@ -27,14 +27,14 @@
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<strong>Muito Bom!</strong>
+				<strong>Very Good!</strong>
 				{{Session::get('logHintSuccess')}}
 			</div>
 		@endif
 
-		<div class="col-md-6">
+		<!-- <div class="col-md-6"> -->
 
-	    	<h3>Exercício {{ $exercise->id }}</h3>
+	    	<h3>Exercise {{ $exercise->id }}</h3>
 
 			<label for="enunciation">{{ $exercise->enunciation }}</label>
 			
@@ -47,14 +47,14 @@
 			@include('user.exercises._form')
 
 			<div class="form-group">
-				{!! Form::submit('Enviar', ['class'=>'btn btn-primary']) !!}
+				{!! Form::submit('To Send', ['class'=>'btn btn-primary']) !!}
 			</div>		
 
 			{!! Form::close() !!}
 			
-		</div>
+		<!-- </div> -->
 		
-		@include('user.hints.listHints')
+		{{-- @include('user.hints.listHints') --}}
 		
 	</div>
 

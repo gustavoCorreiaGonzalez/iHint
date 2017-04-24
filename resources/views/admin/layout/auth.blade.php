@@ -43,12 +43,11 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     @if (!Auth::guest())
-                        <li><a href="{{ route('admin.users.index') }}">Usuários</a></li>
-                        <li><a href="">Professores</a></li>
-                        <li><a href="{{ route('admin.exercises.index') }}">Exercícios</a></li>
-                        <li><a href="{{ route('admin.exercisetype.index') }}">Tipo Exercícios</a></li>
-                        <li><a href="{{ route('admin.exerciselist.index') }}">Lista de Exercícios</a></li>
-                        <li><a href="{{ route('admin.answers.index') }}">Respostas</a></li>
+                        <li><a href="{{ route('admin.users.index') }}">Users</a></li>
+                        <li><a href="{{ route('admin.exercises.index') }}">Exercises</a></li>
+                        <li><a href="{{ route('admin.exercisetype.index') }}">Type of Exercises</a></li>
+                        <li><a href="{{ route('admin.exerciselist.index') }}">Exercise Lsist</a></li>
+                        <li><a href="{{ route('admin.answers.index') }}">Answers</a></li>
                     @endif
                 </ul>
 

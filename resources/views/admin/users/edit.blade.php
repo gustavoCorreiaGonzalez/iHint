@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h3>Editando Usuário: {{ $user->name }}</h3>
+		<h3>Editing User: {{ $user->name }}</h3>
 		
 		@include('errors._check')
 
@@ -11,7 +11,7 @@
 		@include('admin.users._form')
 
 		<div class="form-group">
-			{!! Form::submit('Salvar Usuário', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Save User', ['class'=>'btn btn-primary']) !!}
 		</div>		
 
 		{!! Form::close() !!}

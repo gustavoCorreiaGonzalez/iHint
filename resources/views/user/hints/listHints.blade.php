@@ -1,14 +1,14 @@
 <div class="col-md-5">
-	@if(!strlen($hints))
-		<h3>Pedir Dicas</h3>
+	@if(count($hints))
+		<h3>Ask for hints</h3>
 	@else
-		<h3>Sem Dicas!</h3>
+		<h3>No Hints!</h3>
 	@endif
 	
 	@foreach($hints as $hint)
 		@if($hint->exercise_id == $exercise->id)
 
-			<a href="" class="list-group-item" data-toggle="modal" data-target=".pop-up-{{ $hint->id }}">Dica {{ $hint->id }}</a>
+			<a href="" class="list-group-item" data-toggle="modal" data-target=".pop-up-{{ $hint->id }}">Hint {{ $hint->id }}</a>
 
 		@endif
 	@endforeach
@@ -19,7 +19,7 @@
 		    	<div class="modal-dialog modal-lg">
 		      		<div class="modal-content">
 						<div class="modal-header">
-		          			<h4 class="modal-title" id="myLargeModalLabel-1">Dica {{ $hint->id }}</h4>
+		          			<h4 class="modal-title" id="myLargeModalLabel-1">Hint {{ $hint->id }}</h4>
 		        		</div>
 		        		<div class="modal-body">
 
