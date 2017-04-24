@@ -38,6 +38,116 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('university') ? ' has-error' : '' }}">
+                            <label for="university" class="col-md-4 control-label">University (Initials)</label>
+
+                            <div class="col-md-6">
+                                <input id="university" type="text" class="form-control" name="university" value="{{ old('university') }}">
+
+                                @if ($errors->has('university'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('university') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('course') ? ' has-error' : '' }}">
+                            <label for="course" class="col-md-4 control-label">Course</label>
+
+                            <div class="col-md-6">
+                                <input id="course" type="text" class="form-control" name="course" value="{{ old('course') }}">
+
+                                @if ($errors->has('course'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('course') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('semester') ? ' has-error' : '' }}">
+                            <label for="semester" class="col-md-4 control-label">Semester</label>
+
+                            <div class="col-md-6">
+                                <select id="semester" name="semester" value="{{ old('semester') }}">
+                                    @if (old('semester') == 1)
+                                        <option value="1" selected="">1° Semester</option>
+                                    @else
+                                        <option value="1">1° Semester</option>
+                                    @endif
+                                    
+                                    @if (old('semester') == 2)
+                                        <option value="2" selected="">2° Semester</option>
+                                    @else
+                                        <option value="2">2° Semester</option>
+                                    @endif
+                                </select>
+
+                                @if ($errors->has('semester'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('semester') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('experience') ? ' has-error' : '' }}">
+                            <label for="experience" class="col-md-4 control-label">Experience with pre-graduation programming:</label>
+
+                            <div class="col-md-6">
+                                Yes
+                                
+                                @if (old('experience') == 1)
+                                    <input name="experience" value="1" type="radio" checked="checked">
+                                @else
+                                    <input name="experience" value="1" type="radio">
+                                @endif
+                                
+                                No
+
+                                @if (old('experience') == 0)
+                                    <input name="experience" value="0" type="radio" checked="checked">
+                                @else
+                                    <input name="experience" value="0" type="radio">
+                                @endif
+
+                                @if ($errors->has('experience'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('experience') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('works') ? ' has-error' : '' }}">
+                            <label for="works" class="col-md-4 control-label">Works or has already worked with programming:</label>
+
+                            <div class="col-md-6">
+                                Yes
+                                
+                                @if (old('works') == 1)
+                                    <input name="works" value="1" type="radio" checked="checked">
+                                @else
+                                    <input name="works" value="1" type="radio">
+                                @endif
+                                
+                                No
+
+                                @if (old('works') == 0)
+                                    <input name="works" value="0" type="radio" checked="checked">
+                                @else
+                                    <input name="works" value="0" type="radio">
+                                @endif
+
+                                @if ($errors->has('works'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('works') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
