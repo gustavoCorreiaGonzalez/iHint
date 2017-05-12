@@ -2,7 +2,7 @@
 
 <div class="form-group">
 	{!! Form::label('Enunciation', 'Enunciation:') !!}
-	{!! Form::text('enunciation', null, ['class'=>'form-control ']) !!}
+	{!! Form::textarea('enunciation', null, ['class'=>'form-control ']) !!}
 </div>
 
 <div class="form-group">

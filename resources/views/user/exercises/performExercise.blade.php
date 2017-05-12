@@ -13,12 +13,12 @@
 
 				</br>
 				
-				Successful tests!
+				<!-- Successful tests!
 				<div class="progress">
 				  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{Session::get('failure')}}%;">
 				    {{Session::get('failure')}}
 				  </div>
-				</div>
+				</div> -->
 			</div>
 		@endif
 
@@ -36,7 +36,7 @@
 
 	    	<h3>Exercise {{ $exercise->id }}</h3>
 
-			<label for="enunciation">{{ $exercise->enunciation }}</label>
+			<pre><label for="enunciation">{{ $exercise->enunciation }}</label></pre>
 			
 			</br></br>
 
