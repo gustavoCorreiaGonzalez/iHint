@@ -123,8 +123,12 @@ class AnswerController extends Controller
 
         $number_of_answers = count($answer);
 
-        exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');
-
+        if ($exercise_id != 6) {
+            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');    
+        } else {
+            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste -lm');
+        }
+        
         $number_of_hits = 0;
 
         for ($i = 0; $i < $number_of_answers; $i++) {
