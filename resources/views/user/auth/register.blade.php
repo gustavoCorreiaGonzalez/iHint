@@ -82,6 +82,42 @@
                                     @else
                                         <option value="2">2° Semester</option>
                                     @endif
+
+                                    @if (old('semester') == 3)
+                                        <option value="3" selected="">3° Semester</option>
+                                    @else
+                                        <option value="3">3° Semester</option>
+                                    @endif
+
+                                    @if (old('semester') == 4)
+                                        <option value="4" selected="">4° Semester</option>
+                                    @else
+                                        <option value="4">4° Semester</option>
+                                    @endif
+
+                                    @if (old('semester') == 5)
+                                        <option value="5" selected="">5° Semester</option>
+                                    @else
+                                        <option value="5">5° Semester</option>
+                                    @endif
+
+                                    @if (old('semester') == 6)
+                                        <option value="6" selected="">6° Semester</option>
+                                    @else
+                                        <option value="6">6° Semester</option>
+                                    @endif
+
+                                    @if (old('semester') == 7)
+                                        <option value="7" selected="">7° Semester</option>
+                                    @else
+                                        <option value="7">7° Semester</option>
+                                    @endif
+
+                                    @if (old('semester') == 8)
+                                        <option value="8" selected="">8° Semester</option>
+                                    @else
+                                        <option value="8">8° Semester</option>
+                                    @endif
                                 </select>
 
                                 @if ($errors->has('semester'))
