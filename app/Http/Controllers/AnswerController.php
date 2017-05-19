@@ -129,7 +129,7 @@ class AnswerController extends Controller
 
         for ($i = 0; $i < $number_of_answers; $i++) {
             $result = exec('cd '.$storage_path.' && ./teste '.$answer[$i]['answerInput']);
-
+	
             if ($result == $answer[$i]['answerOutput'])
                 $number_of_hits++;
         }
