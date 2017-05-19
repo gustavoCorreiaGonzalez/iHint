@@ -157,24 +157,26 @@ class AnswerController extends Controller
     {
         $user_id = \Auth::user()->id;
 
-        $result = \DB::table('answers')
-            ->join('exercises', 'answers.exercise_id', '=', 'exercises.id')
-            ->select('answers.answer', 'answers.user_id', 'exercises.enunciation')
-            ->whereRaw('answers.exercise_id = '.$exercise_id.' AND answers.user_id != '.$user_id)
-            ->inRandomOrder()
-            ->first();
+        // $result = \DB::table('answers')
+        //     ->join('exercises', 'answers.exercise_id', '=', 'exercises.id')
+        //     ->select('answers.answer', 'answers.user_id', 'exercises.enunciation')
+        //     ->whereRaw('answers.exercise_id = '.$exercise_id.' AND answers.user_id != '.$user_id)
+        //     ->inRandomOrder()
+        //     ->first();
 
-        if ($result == null) {
-            return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
-        } else {
-            $answer = \File::get($result->answer);
+        return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
 
-            $user_id_exercise = $result->user_id;
+        // if ($result == null) {
+        //     return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
+        // } else {
+        //     $answer = \File::get($result->answer);
 
-            $enunciation = $result->enunciation;
+        //     $user_id_exercise = $result->user_id;
 
-            return view('user.exercises.users_solucions', compact('answer', 'user_id_exercise', 'enunciation' , 'exercise_id'));
-        }
+        //     $enunciation = $result->enunciation;
+
+        //     return view('user.exercises.users_solucions', compact('answer', 'user_id_exercise', 'enunciation' , 'exercise_id'));
+        // }
     }
 }
 
