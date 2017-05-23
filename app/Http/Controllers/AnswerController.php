@@ -103,14 +103,22 @@ class AnswerController extends Controller
 
         $data = array_collapse([$data, $metrics]);
 
-        $this->repository->create($data);
-
         $result = AnswerController::validateExercise($exercise_id, $storage_path, $file_name);
 
-        if ($result == 100)         
+        if ($result == 100) {
+
+            $data = array_add($data, 'is_corretc', 1);
+
+            $this->repository->create($data);
+
             return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Successfully Sent Exercise!'); 
-        else
+        } else {
+            $data = array_add($data, 'is_corretc', 0);
+
+            $this->repository->create($data);
+
             return back()->with('failure', $result);
+        }
 
         /* O que tem pra fazer ainda
         

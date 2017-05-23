@@ -23,6 +23,7 @@ class CreateAnswersTable extends Migration
             $table->integer('number_of_modules');
             $table->integer('lines_of_code');
             $table->integer('cyclomatic_complexity');
+            $table->boolean('is_corretc');
             $table->timestamps();
         });
     }
