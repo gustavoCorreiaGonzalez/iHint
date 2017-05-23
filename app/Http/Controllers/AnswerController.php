@@ -68,24 +68,30 @@ class AnswerController extends Controller
 
     public function sendAnswer(AnswerRequest $request)
     {
+     
+        $user_id = $request->input('user_id');
+
+        $exercise_id = $request->input('exercise_id');
+
+        $storage_path = storage_path().'/exercises/user_'.$user_id.'/exercise_'.$exercise_id;
+
+        $files_in_directory = glob($storage_path.'/*.c*');
         
         if ($request->hasFile('answer')) {
             $file = $request->file('answer');
 
             $file_name = $file->getClientOriginalName();
 
-            //$file_name = 'E'.$file_name;
+            $amount_of_files = count($files_in_directory) + 1;
+
+            $file_name = $amount_of_files.'_attempt_'.$file_name;
         } else {
             $file = $request->file('answer');
 
             $file_name = $file->getClientOriginalName();
+
+            $file_name = '1_attempt_'.$file_name;
         }
-
-        $user_id = $request->input('user_id');
-
-        $exercise_id = $request->input('exercise_id');
-
-        $storage_path = storage_path().'/exercises/user_'.$user_id.'/exercise_'.$exercise_id;
 
         $data = $request->all();
 
