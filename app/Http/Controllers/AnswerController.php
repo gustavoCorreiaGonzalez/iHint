@@ -62,13 +62,13 @@ class AnswerController extends Controller
     public function destroy($id)
     {
         $this->repository->delete($id);
-        
+
         return redirect()->route('admin.answers.index');
     }
 
     public function sendAnswer(AnswerRequest $request)
     {
-     
+
         $user_id = $request->input('user_id');
 
         $exercise_id = $request->input('exercise_id');
@@ -76,7 +76,7 @@ class AnswerController extends Controller
         $storage_path = storage_path().'/exercises/user_'.$user_id.'/exercise_'.$exercise_id;
 
         $files_in_directory = glob($storage_path.'/*.c*');
-        
+
         if ($request->hasFile('answer')) {
             $file = $request->file('answer');
 
@@ -111,7 +111,7 @@ class AnswerController extends Controller
 
             $this->repository->create($data);
 
-            return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Successfully Sent Exercise!'); 
+            return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Exercício Enviado com Sucesso!');
         } else {
             $data = array_add($data, 'is_corretc', 0);
 
@@ -121,7 +121,7 @@ class AnswerController extends Controller
         }
 
         /* O que tem pra fazer ainda
-        
+
         Cada submissão, tanto correta ou incorreta, é gravada no banco de dados na forma
         de log, sendo salvo os dados: a usuário que realizou o exercício, todas as submissões, os erros
         cometidos, o tempo demorado para obter sucesso no exercício, data e dicas utilizadas.
@@ -138,11 +138,11 @@ class AnswerController extends Controller
         $number_of_answers = count($answer);
 
         if ($exercise_id != 6) {
-            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');    
+            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');
         } else {
             exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste -lm');
         }
-        
+
         $number_of_hits = 0;
 
         for ($i = 0; $i < $number_of_answers; $i++) {
@@ -182,7 +182,7 @@ class AnswerController extends Controller
         //     ->inRandomOrder()
         //     ->first();
 
-        return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
+        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica Enviados com Sucesso!');
 
         // if ($result == null) {
         //     return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');

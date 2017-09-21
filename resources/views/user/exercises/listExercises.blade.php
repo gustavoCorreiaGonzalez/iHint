@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <h3>Exercise list</h3>
+    <h3>Lista de Exercícios</h3>
 
 	@if(Session::has('success'))
 		<div class="alert alert-success" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>Very Good!</strong>
+			<strong>Muito Bom!</strong>
 			{{Session::get('success')}}
 		</div>
 	@endif
@@ -22,11 +22,11 @@
             @foreach($exercises as $exercise)
 				<?php $count++ ?>
 
-                <a href="{{ route('user.exercises.performExercise', ['id'=>$exercise->id]) }}" class="list-group-item">Exercise {{ $exercise->id }} </a>
+                <a href="{{ route('user.exercises.performExercise', ['id'=>$exercise->id]) }}" class="list-group-item">Exercício {{ $exercise->id }} </a>
             @endforeach
 
-            @if ($count == 0) 
-				All exercises have been performed!
+            @if ($count == 0)
+				        Todos os exercícios foram realizados!
             @endif
 
             {!! $exercises->render() !!}
@@ -35,4 +35,4 @@
     </div>
 </div>
 
-@endsection    
+@endsection

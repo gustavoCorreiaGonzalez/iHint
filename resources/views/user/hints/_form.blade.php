@@ -1,10 +1,10 @@
 <!-- Hint Form Input -->
 
 <div class="form-group">
-	{!! Form::label('Motivation', 'Based on the exercise performed, write a hint about the idea used.') !!}
+	{!! Form::label('Motivation', 'Com base no exercício realizado, escreva uma dica sobre o pensamento utilizado.') !!}
 </div>
 <div class="form-group">
-	{!! Form::label('Description', 'Description:') !!}
+	{!! Form::label('Description', 'Descrição:') !!}
 </div>
 <div class="form-group">
 	{!! Form::textarea('description', null, ['class'=>'form-control ']) !!}

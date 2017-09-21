@@ -1,37 +1,37 @@
 <!-- Exercise Form Input -->
 
 <div class="form-group">
-	{!! Form::label('Enunciation', 'Enunciation:') !!}
+	{!! Form::label('Enunciation', 'Enunciado:') !!}
 	{!! Form::textarea('enunciation', null, ['class'=>'form-control ']) !!}
 </div>
 
 <div class="form-group">
-	{!! Form::label('TypeofExercise', 'Type of Exercise:') !!}
+	{!! Form::label('TypeofExercise', 'Tipo do Exercício:') !!}
 	{!! Form::select('exercisetype_id', $types, null, ['class'=>'form-control ']) !!}
 </div>
 
 <div class="form-group">
-	{!! Form::label('Answer', 'Answer:') !!}
+	{!! Form::label('Answer', 'Resposta:') !!}
 </div>
 
 <div class="form-group">
 	<a class="btn btn-primary" href="javascript:void(0)" id="addInput">
 		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-		Add Answer
+		Adicionar Resposta
 	</a>
 </div>
 
 <div class="form-group">
 	<div id="dynamicDiv">
-		{!! Form::label('Input', 'Input:') !!}
+		{!! Form::label('Input', 'Entrada:') !!}
 		{!! Form::text('answer', null, ['class'=>'form-control', 'name'=>'answer[0][answerInput]']) !!}
-		{!! Form::label('Output', 'Output:') !!}
+		{!! Form::label('Output', 'Saída:') !!}
 		{!! Form::text('answer', null, ['class'=>'form-control', 'name'=>'answer[0][answerOutput]']) !!}
 	</div>
 </div>
-	
+
 	<script>
-		
+
 		$(function () {
 			var i = 0;
 
@@ -41,9 +41,9 @@
 		    	i++;
 
 		        $('<p>'+
-						'<label for="Input">Input:</label>'+
+						'<label for="Input">Entrada:</label>'+
 		        		'<input class="form-control" name="answer['+i+'][answerInput]" type="text">'+
-		        		'<label for="Output">Output:</label>'+
+		        		'<label for="Output">Saída:</label>'+
 		        		'<input class="form-control" name="answer['+i+'][answerOutput]" type="text">'+
 						'</br>'+
 	        			'<a class="btn btn-danger" href="javascript:void(0)" id="remInput">'+

@@ -3,7 +3,7 @@
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
 <div class="form-group">
-	<label for="code">User Resolution {{ $user_id_exercise }}:</label>
+	<label for="code">Solução do Usuário {{ $user_id_exercise }}:</label>
 </div>
 <div class="form-group">
 	<label for="code">{{ $enunciation }}</label>
@@ -16,7 +16,7 @@
 	</pre>
 </div>
 <div class="form-group">
-	{!! Form::label('hint', 'Write a hint to improve the resolution of this exercise:') !!}
+	{!! Form::label('hint', 'Escreva uma dica para melhorar a resolução desse exercício:') !!}
 	{!! Form::textarea('description', null, ['class'=>'form-control']) !!}
 	{!! Form::hidden('user_id', Auth::user()->id)!!}
 	{!! Form::hidden('exercise_id', $exercise_id) !!}

@@ -4,17 +4,17 @@
 	<div class="container">
 		<h3>Exercises</h3>
 
-		<a href="{{ route('admin.exercises.create') }}" class="btn btn-default">New Exercise</a>
+		<a href="{{ route('admin.exercises.create') }}" class="btn btn-default">Novo Exercício</a>
 		<br><br>
-		
+
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Statement of the question</th>
-					<th>Type of Exercise</th>
-					<th>Answer</th>
-					<th>Action</th>
+					<th>Id</th>
+					<th>Descrição da Questão</th>
+					<th>Tipo do Exercício</th>
+					<th>Resposta</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 
@@ -27,11 +27,11 @@
 					<td>{{ $exercise->answer }}</td>
 					<td>
 						<a href="{{ route('admin.exercises.edit', ['id'=>$exercise->id]) }}" class="btn btn-default btn-sm">
-							Edit
+							Editar
 						</a>
 
 						<a href="{{ route('admin.exercises.destroy', ['id'=>$exercise->id]) }}" class="btn btn-default btn-sm">
-							Delete
+							Remover
 						</a>
 					</td>
 				</tr>

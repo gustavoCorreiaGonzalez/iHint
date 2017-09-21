@@ -2,16 +2,16 @@
 
 @section('content')
 	<div class="container">
-		<h3>Users</h3>
+		<h3>Usuários</h3>
 
 		<!-- <a href="{{ route('admin.users.create') }}" class="btn btn-default">New User</a>
 		<br><br> -->
-		
+
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Name</th>
+					<th>Id</th>
+					<th>Nome</th>
 					<!-- <th>Action</th> -->
 				</tr>
 			</thead>
@@ -25,7 +25,7 @@
 						<a href="{{ route('admin.users.edit', ['id'=>$user->id]) }}" class="btn btn-default btn-sm">
 							Edit
 						</a>
-					
+
 						<a href="{{ route('admin.users.destroy', ['id'=>$user->id]) }}" class="btn btn-default btn-sm">
 							Remove
 						</a>
