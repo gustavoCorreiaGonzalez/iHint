@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AnswersAddIsCorretc extends Migration
+class AnswersAddIsCorrect extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AnswersAddIsCorretc extends Migration
     public function up()
     {
       Schema::table('answers', function($table){
-          $table->boolean('is_corretc');
+          $table->boolean('is_correct');
       });
     }
 

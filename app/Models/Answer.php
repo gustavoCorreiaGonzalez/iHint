@@ -15,7 +15,7 @@ class Answer extends Model implements Transformable
         'number_of_modules',
         'lines_of_code',
         'cyclomatic_complexity',
-        'is_corretc',
+        'is_correct',
     	'user_id',
     	'exercise_id'
     ];

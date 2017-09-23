@@ -107,13 +107,13 @@ class AnswerController extends Controller
 
         if ($result == 100) {
 
-            $data = array_add($data, 'is_corretc', 1);
+            $data = array_add($data, 'is_correct', 1);
 
             $this->repository->create($data);
 
             return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Exercício Enviado com Sucesso!');
         } else {
-            $data = array_add($data, 'is_corretc', 0);
+            $data = array_add($data, 'is_correct', 0);
 
             $this->repository->create($data);
 
