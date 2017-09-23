@@ -71,7 +71,7 @@ class ExerciseController extends Controller
     public function destroy($id)
     {
         $this->repository->delete($id);
-        
+
         return redirect()->route('admin.exercises.index');
     }
 
@@ -83,11 +83,11 @@ class ExerciseController extends Controller
             ->whereNotIn('id', function ($query) use ($usuario_id) {
                 $query->select(\DB::raw('exercise_id'))
                     ->from('answers')
-                    ->whereRaw('exercise_id = exercises.id AND user_id = '.$usuario_id);
+                    ->whereRaw('exercise_id = exercises.id AND is_correct = 1 AND user_id = '.$usuario_id);
             })
             ->paginate();
-            
-        return view('user.exercises.listExercises', compact('exercises'));   
+
+        return view('user.exercises.listExercises', compact('exercises'));
     }
 
     public function performExercise($id)

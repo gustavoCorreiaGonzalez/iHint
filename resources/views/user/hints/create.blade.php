@@ -7,13 +7,13 @@
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
-				<strong>Very Good!</strong>
+				<strong>Muito Bom!</strong>
 				{{Session::get('success')}}
 			</div>
 		@endif
 
-		<h3>New Hint</h3>
-		
+		<h3>Nova Dica</h3>
+
 		@include('errors._check')
 
 		{!! Form::open(['route'=>'user.hints.store', 'class'=>'form']) !!}
@@ -21,8 +21,8 @@
 		@include('user.hints._form')
 
 		<div class="form-group">
-			{!! Form::submit('Save Hint', ['class'=>'btn btn-primary']) !!}
-		</div>		
+			{!! Form::submit('Salvar Dica', ['class'=>'btn btn-primary']) !!}
+		</div>
 
 		{!! Form::close() !!}
 

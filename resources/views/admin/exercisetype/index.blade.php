@@ -2,17 +2,17 @@
 
 @section('content')
 	<div class="container">
-		<h3>Types of Exercises</h3>
+		<h3>Tipo de Exercícios</h3>
 
-		<a href="{{ route('admin.exercisetype.create') }}" class="btn btn-default">New Type</a>
+		<a href="{{ route('admin.exercisetype.create') }}" class="btn btn-default">Novo Tipo</a>
 		<br><br>
-		
+
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>Tipo</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 
@@ -23,11 +23,11 @@
 					<td>{{ $exercisetype->type }}</td>
 					<td>
 						<a href="{{ route('admin.exercisetype.edit', ['id'=>$exercisetype->id]) }}" class="btn btn-default btn-sm">
-							Edit
+							Editar
 						</a>
 
 						<a href="{{ route('admin.exercisetype.destroy', ['id'=>$exercisetype->id]) }}" class="btn btn-default btn-sm">
-							Remove
+							Remover
 						</a>
 					</td>
 				</tr>

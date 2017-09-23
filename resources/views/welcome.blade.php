@@ -67,10 +67,10 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-right links">
-                <a href="{{ url('/admin/login') }}">Admin Login</a>
-                <a href="{{ url('/admin/register') }}">Admin Register</a>
-                <a href="{{ url('/user/login') }}">User Login</a>
-                <a href="{{ url('/user/register') }}">User Register</a>
+                <a href="{{ url('/admin/login') }}">Login do Admin</a>
+                <a href="{{ url('/admin/register') }}">Registrar Admin</a>
+                <a href="{{ url('/user/login') }}">Login do Usuário</a>
+                <a href="{{ url('/user/register') }}">Registrar Usuário</a>
             </div>
 
             <div class="content">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laravel.com/docs">Documentação</a>
                     <a href="https://github.com/gustavoCorreiaGonzalez/iHint">GitHub</a>
                 </div>
             </div>

@@ -2,17 +2,17 @@
 
 @section('content')
 	<div class="container">
-		<h3>Exercise list</h3>
+		<h3>Lista de Exercício</h3>
 
-		<a href="{{ route('admin.exerciselist.create') }}" class="btn btn-default">New List</a>
+		<a href="{{ route('admin.exerciselist.create') }}" class="btn btn-default">Nova Lista</a>
 		<br><br>
-		
+
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>List</th>
-					<th>Action</th>
+					<th>Lista</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 
@@ -23,11 +23,11 @@
 					<td>{{ $exerciselist->topic }}</td>
 					<td>
 						<a href="{{ route('admin.exerciselist.edit', ['id'=>$exerciselist->id]) }}" class="btn btn-default btn-sm">
-							Edit
+							Editar
 						</a>
 
 						<a href="{{ route('admin.exerciselist.destroy', ['id'=>$exerciselist->id]) }}" class="btn btn-default btn-sm">
-							Remove
+							Remover
 						</a>
 					</td>
 				</tr>

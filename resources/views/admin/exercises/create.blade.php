@@ -4,9 +4,9 @@
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	
+
 	<div class="container">
-		<h3>New Exercise</h3>
+		<h3>Novo Exercício</h3>
 
 		@include('errors._check')
 
@@ -15,8 +15,8 @@
 		@include('admin.exercises._form')
 
 		<div class="form-group">
-			{!! Form::submit('Create Exercise', ['class'=>'btn btn-primary']) !!}
-		</div>		
+			{!! Form::submit('Criar Exercício', ['class'=>'btn btn-primary']) !!}
+		</div>
 
 		{!! Form::close() !!}
 

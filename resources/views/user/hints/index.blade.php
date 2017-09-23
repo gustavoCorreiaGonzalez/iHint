@@ -7,10 +7,10 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>ID Exercise</th>
-					<th>Description</th>
-					<th>Action</th>
+					<th>Id</th>
+					<th>Id do Exercício</th>
+					<th>Descrição</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 
@@ -22,11 +22,11 @@
 					<td>{{ $hint->description }}</td>
 					<td>
 						<a href="{{ route('user.hints.edit', ['id'=>$hint->id]) }}" class="btn btn-default btn-sm">
-							Edit
+							Editar
 						</a>
 
 						<a href="{{ route('user.hints.destroy', ['id'=>$hint->id]) }}" class="btn btn-default btn-sm">
-							Remove
+							Remover
 						</a>
 					</td>
 				</tr>

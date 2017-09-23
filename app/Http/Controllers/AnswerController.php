@@ -62,30 +62,36 @@ class AnswerController extends Controller
     public function destroy($id)
     {
         $this->repository->delete($id);
-        
+
         return redirect()->route('admin.answers.index');
     }
 
     public function sendAnswer(AnswerRequest $request)
     {
-        
-        if ($request->hasFile('answer')) {
-            $file = $request->file('answer');
-
-            $file_name = $file->getClientOriginalName();
-
-            //$file_name = 'E'.$file_name;
-        } else {
-            $file = $request->file('answer');
-
-            $file_name = $file->getClientOriginalName();
-        }
 
         $user_id = $request->input('user_id');
 
         $exercise_id = $request->input('exercise_id');
 
         $storage_path = storage_path().'/exercises/user_'.$user_id.'/exercise_'.$exercise_id;
+
+        $files_in_directory = glob($storage_path.'/*.c*');
+
+        if ($request->hasFile('answer')) {
+            $file = $request->file('answer');
+
+            $file_name = $file->getClientOriginalName();
+
+            $amount_of_files = count($files_in_directory) + 1;
+
+            $file_name = $amount_of_files.'_attempt_'.$file_name;
+        } else {
+            $file = $request->file('answer');
+
+            $file_name = $file->getClientOriginalName();
+
+            $file_name = '1_attempt_'.$file_name;
+        }
 
         $data = $request->all();
 
@@ -97,17 +103,25 @@ class AnswerController extends Controller
 
         $data = array_collapse([$data, $metrics]);
 
-        $this->repository->create($data);
-
         $result = AnswerController::validateExercise($exercise_id, $storage_path, $file_name);
 
-        if ($result == 100)         
-            return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Successfully Sent Exercise!'); 
-        else
+        if ($result == 100) {
+
+            $data = array_add($data, 'is_correct', 1);
+
+            $this->repository->create($data);
+
+            return redirect()->route('user.hints.create',['id' => $exercise_id])->with('success', 'Exercício Enviado com Sucesso!');
+        } else {
+            $data = array_add($data, 'is_correct', 0);
+
+            $this->repository->create($data);
+
             return back()->with('failure', $result);
+        }
 
         /* O que tem pra fazer ainda
-        
+
         Cada submissão, tanto correta ou incorreta, é gravada no banco de dados na forma
         de log, sendo salvo os dados: a usuário que realizou o exercício, todas as submissões, os erros
         cometidos, o tempo demorado para obter sucesso no exercício, data e dicas utilizadas.
@@ -124,11 +138,11 @@ class AnswerController extends Controller
         $number_of_answers = count($answer);
 
         if ($exercise_id != 6) {
-            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');    
+            exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste');
         } else {
             exec('gcc '.$storage_path.'/'.$file_name.' -o '.$storage_path.'/teste -lm');
         }
-        
+
         $number_of_hits = 0;
 
         for ($i = 0; $i < $number_of_answers; $i++) {
@@ -168,7 +182,7 @@ class AnswerController extends Controller
         //     ->inRandomOrder()
         //     ->first();
 
-        return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
+        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica Enviados com Sucesso!');
 
         // if ($result == null) {
         //     return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');

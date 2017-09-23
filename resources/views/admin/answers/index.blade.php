@@ -2,17 +2,17 @@
 
 @section('content')
 	<div class="container">
-		<h3>Answers</h3>
+		<h3>Respostas</h3>
 
-		{{-- <a href="{{ route('admin.answers.create') }}" class="btn btn-default">New Answer</a>
+		{{-- <a href="{{ route('admin.answers.create') }}" class="btn btn-default">Nova Resposta</a>
 		<br><br> --}}
-		
+
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Answers</th>
-					<th>Action</th>
+					<th>Respostas</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 
@@ -23,11 +23,11 @@
 					<td>{{ $answer->answer }}</td>
 					<td>
 						<a href="{{ route('admin.answers.edit', ['id'=>$answer->id]) }}" class="btn btn-default btn-sm">
-							Edit
+							Editar
 						</a>
 
 						<a href="{{ route('admin.answers.destroy', ['id'=>$answer->id]) }}" class="btn btn-default btn-sm">
-							Remove
+							Remover
 						</a>
 					</td>
 				</tr>

@@ -35,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/admin/home') }}">
-                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: Admin
+                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: Administrador
                 </a>
             </div>
 
@@ -43,11 +43,12 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     @if (!Auth::guest())
-                        <li><a href="{{ route('admin.users.index') }}">Users</a></li>
-                        <li><a href="{{ route('admin.exercises.index') }}">Exercises</a></li>
-                        <li><a href="{{ route('admin.exercisetype.index') }}">Type of Exercises</a></li>
-                        <li><a href="{{ route('admin.exerciselist.index') }}">Exercise Lsist</a></li>
-                        <li><a href="{{ route('admin.answers.index') }}">Answers</a></li>
+                        <li><a href="{{ route('admin.users.index') }}">Usuários</a></li>
+                        <li><a href="{{ route('admin.exercises.index') }}">Exercícios</a></li>
+                        <li><a href="{{ route('admin.exercisetype.index') }}">Tipos de Exercício</a></li>
+                        <li><a href="{{ route('admin.exerciselist.index') }}">Listas de Exercício</a></li>
+                        <li><a href="{{ route('admin.answers.index') }}">Respostas</a></li>
+                        <li><a href="{{ route('admin.answers.index') }}">Dicas</a></li>
                     @endif
                 </ul>
 
@@ -56,7 +57,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/admin/login') }}">Login</a></li>
-                        <li><a href="{{ url('/admin/register') }}">Register</a></li>
+                        <li><a href="{{ url('/admin/register') }}">Registrar</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -68,7 +69,7 @@
                                     <a href="{{ url('/admin/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Sair
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
