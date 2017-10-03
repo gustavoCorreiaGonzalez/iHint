@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('university') ? ' has-error' : '' }}">
-                            <label for="university" class="col-md-4 control-label">Univercidade (Iniciais)</label>
+                            <label for="university" class="col-md-4 control-label">Universidade (Iniciais)</label>
 
                             <div class="col-md-6">
                                 <input id="university" type="text" class="form-control" name="university" value="{{ old('university') }}">
