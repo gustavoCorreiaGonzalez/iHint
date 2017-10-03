@@ -67,5 +67,10 @@ class RepositoryServiceProvider extends ServiceProvider
             'iHint\Repositories\UserRepository',
             'iHint\Repositories\UserRepositoryEloquent'
         );
+
+        $this->app->bind(
+            'iHint\Repositories\ExperimentRepository',
+            'iHint\Repositories\ExperimentRepositoryEloquent'
+        );
     }
 }

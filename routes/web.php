@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
   Route::get('/users/edit/{id}', 'UserController@edit')->name('admin.users.edit');
   Route::post('/users/update/{id}', 'UserController@update')->name('admin.users.update');
   Route::post('/users/store', 'UserController@store')->name('admin.users.store');
-  Route::get('/users/destroy/{id}', 'UserController@destroy')->name('admin.users.destroy');  
+  Route::get('/users/destroy/{id}', 'UserController@destroy')->name('admin.users.destroy');
 
   Route::get('/exercises', 'ExerciseController@index')->name('admin.exercises.index');
   Route::get('/exercises/create', 'ExerciseController@create')->name('admin.exercises.create');
@@ -65,6 +65,13 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
   Route::post('/answers/update/{id}', 'AnswerController@update')->name('admin.answers.update');
   Route::post('/answers/store', 'AnswerController@store')->name('admin.answers.store');
   Route::get('/answers/destroy/{id}', 'AnswerController@destroy')->name('admin.answers.destroy');
+
+  Route::get('/experiments', 'ExperimentController@index')->name('admin.experiments.index');
+  Route::get('/experiments/create', 'ExperimentController@create')->name('admin.experiments.create');
+  Route::get('/experiments/edit/{id}', 'ExperimentController@edit')->name('admin.experiments.edit');
+  Route::post('/experiments/update/{id}', 'ExperimentController@update')->name('admin.experiments.update');
+  Route::post('/experiments/store', 'ExperimentController@store')->name('admin.experiments.store');
+  Route::get('/experiments/destroy/{id}', 'ExperimentController@destroy')->name('admin.experiments.destroy');
 });
 
 Route::group(['prefix' => 'teacher'], function () {
@@ -113,4 +120,3 @@ Route::group(['middleware' => ['auth:user'], 'prefix' => 'user'], function () {
   Route::post('/usersSolucions/store', 'HintController@storeUsersSolucions')->name('user.hints.storeUsersSolucions');
 
 });
-

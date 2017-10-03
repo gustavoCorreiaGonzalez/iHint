@@ -49,6 +49,7 @@
                         <li><a href="{{ route('admin.exerciselist.index') }}">Listas de Exercício</a></li>
                         <li><a href="{{ route('admin.answers.index') }}">Respostas</a></li>
                         <li><a href="{{ route('admin.answers.index') }}">Dicas</a></li>
+                        <li><a href="{{ route('admin.experiments.index') }}">Modo do Experimento</a></li>
                     @endif
                 </ul>
 
