@@ -13,7 +13,8 @@ class LogHint extends Model implements Transformable
     protected $fillable = [
     	'user_id',
     	'hint_id',
-    	'exercise_id'
+    	'exercise_id',
+      'score'
     ];
 
     /**

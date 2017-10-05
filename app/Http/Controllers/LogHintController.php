@@ -26,7 +26,7 @@ class LogHintController extends Controller
     public function store(LogHintRequest $request)
     {
         $data = $request->all();
-        
+
         $this->repository->create($data);
 
         $id = $data['exercise_id'];
