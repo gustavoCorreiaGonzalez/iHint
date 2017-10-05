@@ -10,6 +10,7 @@ use iHint\Http\Controllers\Controller;
 use iHint\Repositories\ExerciseRepository;
 use iHint\Models\ExerciseType;
 use iHint\Models\Hint;
+use iHint\Models\Experiment;
 use BD;
 use Auth;
 
@@ -107,7 +108,9 @@ class ExerciseController extends Controller
             ->take(5)
             ->get();
 
-        return view('user.exercises.performExercise', compact('exercise', 'hints'));
+        $experiment = \DB::table('experiments')->first();
+
+        return view('user.exercises.performExercise', compact('exercise', 'hints', 'experiment'));
     }
 
 }

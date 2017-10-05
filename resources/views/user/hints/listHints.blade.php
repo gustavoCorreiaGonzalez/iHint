@@ -1,14 +1,14 @@
 <div class="col-md-5">
 	@if(count($hints))
-		<h3>Ask for hints</h3>
+		<h3>Dicas</h3>
 	@else
-		<h3>No Hints!</h3>
+		<h3>Sem Dicas!</h3>
 	@endif
-	
+
 	@foreach($hints as $hint)
 		@if($hint->exercise_id == $exercise->id)
 
-			<a href="" class="list-group-item" data-toggle="modal" data-target=".pop-up-{{ $hint->id }}">Hint {{ $hint->id }}</a>
+			<a href="" class="list-group-item" data-toggle="modal" data-target=".pop-up-{{ $hint->id }}">Dica {{ $hint->id }}</a>
 
 		@endif
 	@endforeach
@@ -19,19 +19,19 @@
 		    	<div class="modal-dialog modal-lg">
 		      		<div class="modal-content">
 						<div class="modal-header">
-		          			<h4 class="modal-title" id="myLargeModalLabel-1">Hint {{ $hint->id }}</h4>
+		          			<h4 class="modal-title" id="myLargeModalLabel-1">Dica {{ $hint->id }}</h4>
 		        		</div>
 		        		<div class="modal-body">
 
 		        			{{ $hint->description }}
-		        		
+
 			        		{!! Form::open(array('route'=>'user.loghints.store', 'class'=>'form'))!!}
-				
+
 							@include('user.hints._form3')
 
 							<div class="form-group">
 								{!! Form::submit('Recibi a Dica', ['class'=>'btn btn-primary']) !!}
-							</div>		
+							</div>
 
 							{!! Form::close() !!}
 

@@ -32,7 +32,9 @@
 			</div>
 		@endif
 
-		<!-- <div class="col-md-6"> -->
+		@if ($experiment->experiment_mode == 2)
+			<div class="col-md-6">
+		@endif
 
 	  <h3>Exercício {{ $exercise->id }}</h3>
 
@@ -52,9 +54,11 @@
 
 			{!! Form::close() !!}
 
-		<!-- </div> -->
+		</div>
 
-		{{-- @include('user.hints.listHints') --}}
+		@if ($experiment->experiment_mode == 2)
+			@include('user.hints.listHints')
+		@endif
 
 	</div>
 
