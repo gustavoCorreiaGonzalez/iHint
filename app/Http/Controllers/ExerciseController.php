@@ -105,7 +105,6 @@ class ExerciseController extends Controller
                     ->whereRaw('user_id = '.$usuario_id.' AND exercise_id = '.$exercise->id);
             })
             ->inRandomOrder()
-            ->take(5)
             ->get();
 
         $experiment = \DB::table('experiments')->first();
