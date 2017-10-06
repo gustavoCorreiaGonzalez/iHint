@@ -147,7 +147,7 @@ class AnswerController extends Controller
 
         for ($i = 0; $i < $number_of_answers; $i++) {
             $result = exec('cd '.$storage_path.' && ./teste '.$answer[$i]['answerInput']);
-	
+
             if ($result == $answer[$i]['answerOutput'])
                 $number_of_hits++;
         }
@@ -175,26 +175,30 @@ class AnswerController extends Controller
     {
         $user_id = \Auth::user()->id;
 
-        // $result = \DB::table('answers')
-        //     ->join('exercises', 'answers.exercise_id', '=', 'exercises.id')
-        //     ->select('answers.answer', 'answers.user_id', 'exercises.enunciation')
-        //     ->whereRaw('answers.exercise_id = '.$exercise_id.' AND answers.user_id != '.$user_id)
-        //     ->inRandomOrder()
-        //     ->first();
+        // $experiment = \DB::table('experiments')->first();
 
-        return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica Enviados com Sucesso!');
-
-        // if ($result == null) {
-        //     return redirect()->route('user.exercises.listExercises')->with('success', 'Successfully Sent Exercise and Hint!');
+        // if ($experiment->experiment_mode == 2) {
+        //   $result = \DB::table('answers')
+        //       ->join('exercises', 'answers.exercise_id', '=', 'exercises.id')
+        //       ->select('answers.answer', 'answers.user_id', 'exercises.enunciation')
+        //       ->whereRaw('answers.exercise_id = '.$exercise_id.' AND answers.user_id != '.$user_id)
+        //       ->inRandomOrder()
+        //       ->first();
+        //
+        //   if ($result == null) {
+        //       return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica Enviados com Sucesso!');
+        //   } else {
+        //       $answer = \File::get($result->answer);
+        //
+        //       $user_id_exercise = $result->user_id;
+        //
+        //       $enunciation = $result->enunciation;
+        //
+        //       return view('user.exercises.users_solucions', compact('answer', 'user_id_exercise', 'enunciation' , 'exercise_id'));
+        //   }
         // } else {
-        //     $answer = \File::get($result->answer);
-
-        //     $user_id_exercise = $result->user_id;
-
-        //     $enunciation = $result->enunciation;
-
-        //     return view('user.exercises.users_solucions', compact('answer', 'user_id_exercise', 'enunciation' , 'exercise_id'));
-        // }
+          return redirect()->route('user.exercises.listExercises')->with('success', 'Exercício e Dica Enviados com Sucesso!');
+        //}
     }
 }
 

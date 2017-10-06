@@ -42,7 +42,7 @@ class HintController extends Controller
 
         $exercise_id = $data['exercise_id'];
 
-        return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'))->with('success', 'Successfully Sent Hint!');
+        return redirect()->route('user.exercises.usersSolucions', compact('exercise_id'))->with('success', 'Dica Enviada com Sucesso!');
     }
 
     public function edit($id)
@@ -63,7 +63,7 @@ class HintController extends Controller
     public function destroy($id)
     {
         $this->repository->delete($id);
-        
+
         return redirect()->route('user.hints.index');
     }
 

@@ -12,7 +12,7 @@
 			</div>
 		@endif
 
-		<h3>Another User's Solution</h3>
+		<h3>Solução de Outro Usuário</h3>
 
 		@include('errors._check')
 
@@ -21,7 +21,7 @@
 		@include('user.exercises._form2')
 
 		<div class="form-group">
-			{!! Form::submit('Create Hint', ['class'=>'btn btn-primary']) !!}
+			{!! Form::submit('Salvar Dica', ['class'=>'btn btn-primary']) !!}
 		</div>
 
 		{!! Form::close() !!}
