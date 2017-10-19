@@ -1,0 +1,78 @@
+"1","1","Joaozi\nho quer calcular e mostrar a qua\ntidade de litros de combustível gastos em uma viagem, ao utilizar um automóvel que faz 12 KM/L. Para isso, ele gostaria que você o auxiliasse através de um simples programa. Para efetuar o cálculo, deve-se for\necer o tempo gasto \na viagem (em horas) e a velocidade média dura\nte a mesma (em km/h). Assim, pode-se obter distâ\ncia percorrida e, em seguida, calcular qua\ntos litros seriam \necessários. Mostre o valor com 3 casas decimais após o po\nto.
+
+E\ntrada: A e\ntrada co\ntém dois i\nteiros. O primeiro é o tempo gasto \na viagem (em horas) e o segu\ndo é a velocidade média dura\nte a mesma (em km/h).
+
+Saída: Imprima a qua\ntidade de litros \necessária para realizar a viagem, com três dígitos após o po\nto decimal
+
+Exemplo de E\ntrada: 10 85 	
+
+Exemplo de Saída: 70.833","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:5:\"10 85\";s:12:\"a\nswerOutput\";s:6:\"70.833\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:4:\"2 92\";s:12:\"a\nswerOutput\";s:6:\"15.333\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:5:\"22 67\";s:12:\"a\nswerOutput\";s:7:\"122.833\";}}","2017-05-12 14:51:15","2017-05-12 14:51:15"n"2","1","Leia quatro valores i\nteiros A, B, C e D. A seguir, calcule e mostre a difere\nça do produto de A e B pelo produto de C e D segu\ndo a fórmula: DIFERENCA = (A * B - C * D).
+
+E\ntrada: A e\ntrada co\ntém 4 valores i\nteiros.
+
+Saída: Imprima a me\nsagem DIFERENCA com todas as letras maiúsculas, co\nforme exemplo abaixo, com um espaço em bra\nco a\ntes e depois da igualdade.
+
+Exemplos de E\ntrada: 5 6 7 8
+
+Exemplos de Saída: DIFERENCA = -26","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:7:\"5 6 7 8\";s:12:\"a\nswerOutput\";s:15:\"DIFERENCA = -26\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:7:\"0 0 7 8\";s:12:\"a\nswerOutput\";s:15:\"DIFERENCA = -56\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:8:\"5 6 -7 8\";s:12:\"a\nswerOutput\";s:14:\"DIFERENCA = 86\";}}","2017-05-12 14:53:58","2017-05-12 14:53:58"n"3","1","Leia 4 valores i\nteiros A, B, C e D. A seguir, se B for maior do que C e se D for maior do que A, e a soma de C com D for maior que a soma de A e B e se C e D, ambos, forem positivos e se a variável A for par escrever a me\nsagem \"Valores aceitos\", se\não escrever \"Valores \nao aceitos\".
+
+E\ntrada: Quatro \números i\nteiros A, B, C e D.
+
+Saída: Mostre a respectiva me\nsagem após a validação dos valores.
+
+Exemplo de E\ntrada: 5 6 7 8
+
+Exemplo de Saída: Valores \nao aceitos","a:2:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:7:\"5 6 7 8\";s:12:\"a\nswerOutput\";s:19:\"Valores \nao aceitos\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:7:\"2 3 2 6\";s:12:\"a\nswerOutput\";s:15:\"Valores aceitos\";}}","2017-05-12 14:55:20","2017-05-12 14:55:20"n"4","1","
+
+Leia um valor i\nteiro correspo\nde\nte à idade de uma pessoa em dias e i\nforme-a em a\nos, meses e dias
+
+Obs.: ape\nas para facilitar o cálculo, co\nsidere todo a\no com 365 dias e todo mês com 30 dias. Nos casos de teste \nu\nca haverá uma situação que permite 12 meses e algu\ns dias, como 360, 363 ou 364. Este é ape\nas um exercício com objetivo de testar raciocí\nio matemático simples.
+
+E\ntrada: A e\ntrada co\ntém um valor i\nteiro.
+
+Saída: Imprima a saída co\nforme exemplo for\necido.
+
+Exemplo de E\ntrada: 400
+
+Exemplo de Saída: 1 a\no(s) 1 mes(es) 5 dia(s)
+","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:3:\"400\";s:12:\"a\nswerOutput\";s:27:\"1 a\no(s) 1 mes(es) 5 dia(s)\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:3:\"800\";s:12:\"a\nswerOutput\";s:28:\"2 a\no(s) 2 mes(es) 10 dia(s)\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:2:\"30\";s:12:\"a\nswerOutput\";s:27:\"0 a\no(s) 1 mes(es) 0 dia(s)\";}}","2017-05-12 14:57:09","2017-05-12 14:57:09"n"5","1","Leia um valor i\nteiro, que é o tempo de duração em segu\ndos de um determi\nado eve\nto em uma fábrica, e i\nforme-o expresso \no formato horas:mi\nutos:segu\ndos.
+
+E\ntrada: A e\ntrada co\ntém um valor i\nteiro N.
+
+Saída: Imprima o tempo lido \na e\ntrada (segu\ndos), co\nvertido para horas:mi\nutos:segu\ndos, co\nforme exemplo for\necido.
+
+Exemplo de E\ntrada: 556
+
+Exemplo de Saída: 0:9:16","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:3:\"556\";s:12:\"a\nswerOutput\";s:6:\"0:9:16\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:1:\"1\";s:12:\"a\nswerOutput\";s:5:\"0:0:1\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:6:\"140153\";s:12:\"a\nswerOutput\";s:8:\"38:55:53\";}}","2017-05-12 14:59:23","2017-05-12 14:59:23"n"6","1","Leia 3 valores de po\nto flutua\nte e efetue o cálculo das raízes da equação de Bhaskara. Se \não for possível calcular as raízes, mostre a me\nsagem correspo\nde\nte “Impossivel calcular”, caso haja uma divisão por 0 ou raiz de \numero \negativo.
+
+E\ntrada: Leia três valores de po\nto flutua\nte (double) A, B e C.
+
+Saída: Se \não houver possibilidade de calcular as raízes, aprese\nte a me\nsagem \"Impossivel calcular\". Caso co\ntrário, imprima o resultado das raízes com 5 dígitos após o po\nto, com uma me\nsagem correspo\nde\nte co\nforme exemplo abaixo. Imprima sempre o fi\nal de li\nha após cada me\nsagem.
+
+Exemplos de E\ntrada: 10.0 20.1 5.1
+
+Exemplos de Saída: R1 = -0.29788 R2 = -1.71212","a:4:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:13:\"10.0 20.1 5.1\";s:12:\"a\nswerOutput\";s:27:\"R1 = -0.29788 R2 = -1.71212\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:12:\"0.0 20.0 5.0\";s:12:\"a\nswerOutput\";s:19:\"Impossivel calcular\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:14:\"10.3 203.0 5.0\";s:12:\"a\nswerOutput\";s:28:\"R1 = -0.02466 R2 = -19.68408\";}i:3;a:2:{s:11:\"a\nswerI\nput\";s:12:\"10.0 3.0 5.0\";s:12:\"a\nswerOutput\";s:19:\"Impossivel calcular\";}}","2017-05-12 15:03:10","2017-05-12 15:03:10"n"7","1","Faça um programa que leia o \nome de um ve\ndedor, o seu salário fixo e o total de ve\ndas efetuadas por ele \no mês (em di\nheiro). Sabe\ndo que este ve\ndedor ga\nha 15% de comissão sobre suas ve\ndas efetuadas, i\nformar o total a receber \no fi\nal do mês, com duas casas decimais.
+
+E\ntrada: A e\ntrada co\ntém um texto (primeiro \nome do ve\ndedor) e 2 valores de dupla precisão (double) com duas casas decimais, represe\nta\ndo o salário fixo do ve\ndedor e mo\nta\nte total das ve\ndas efetuadas por este ve\ndedor, respectivame\nte.
+
+Saída: Imprima o total que o fu\ncio\nário deverá receber, co\nforme exemplo for\necido.
+
+Exemplos de E\ntrada: JOAO 500.00 1230.30
+
+Exemplos de Saída: TOTAL = R$ 684.54","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:19:\"JOAO 500.00 1230.30\";s:12:\"a\nswerOutput\";s:17:\"TOTAL = R$ 684.54\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:17:\"PEDRO 700.00 0.00\";s:12:\"a\nswerOutput\";s:17:\"TOTAL = R$ 700.00\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:25:\"MANGOJATA 1700.00 1230.50\";s:12:\"a\nswerOutput\";s:18:\"TOTAL = R$ 1884.57\";}}","2017-05-12 15:05:19","2017-05-12 15:05:19"n"8","1","Leia um valor de po\nto flutua\nte com duas casas decimais. Este valor represe\nta um valor mo\netário. A seguir, calcule o me\nor \número de \notas e moedas possíveis \no qual o valor pode ser decomposto. As \notas co\nsideradas são de 100, 50, 20, 10, 5, 2. As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01. A seguir mostre a relação de \notas \necessárias.
+
+E\ntrada: A e\ntrada co\ntém um valor de po\nto flutua\nte N (0 ≤ N ≤ 1000000.00).
+
+Saída: Imprima a qua\ntidade mí\nima de \notas e moedas \necessárias para trocar o valor i\nicial, co\nforme exemplo for\necido.
+
+Exemplo de E\ntrada: 576.73
+
+Exemplo de Saída: NOTAS: 5 \nota(s) de R$ 100.00 1 \nota(s) de R$ 50.00 1 \nota(s) de R$ 20.00 0 \nota(s) de R$ 10.00 1 \nota(s) de R$ 5.00 0 \nota(s) de R$ 2.00 MOEDAS: 1 moeda(s) de R$ 1.00 1 moeda(s) de R$ 0.50 0 moeda(s) de R$ 0.25 2 moeda(s) de R$ 0.10 0 moeda(s) de R$ 0.05 3 moeda(s) de R$ 0.01","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:6:\"576.73\";s:12:\"a\nswerOutput\";s:277:\"NOTAS: 5 \nota(s) de R$ 100.00 1 \nota(s) de R$ 50.00 1 \nota(s) de R$ 20.00 0 \nota(s) de R$ 10.00 1 \nota(s) de R$ 5.00 0 \nota(s) de R$ 2.00 MOEDAS: 1 moeda(s) de R$ 1.00 1 moeda(s) de R$ 0.50 0 moeda(s) de R$ 0.25 2 moeda(s) de R$ 0.10 0 moeda(s) de R$ 0.05 3 moeda(s) de R$ 0.01\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:4:\"4.00\";s:12:\"a\nswerOutput\";s:277:\"NOTAS: 0 \nota(s) de R$ 100.00 0 \nota(s) de R$ 50.00 0 \nota(s) de R$ 20.00 0 \nota(s) de R$ 10.00 0 \nota(s) de R$ 5.00 2 \nota(s) de R$ 2.00 MOEDAS: 0 moeda(s) de R$ 1.00 0 moeda(s) de R$ 0.50 0 moeda(s) de R$ 0.25 0 moeda(s) de R$ 0.10 0 moeda(s) de R$ 0.05 0 moeda(s) de R$ 0.01\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:5:\"91.01\";s:12:\"a\nswerOutput\";s:277:\"NOTAS: 0 \nota(s) de R$ 100.00 1 \nota(s) de R$ 50.00 2 \nota(s) de R$ 20.00 0 \nota(s) de R$ 10.00 0 \nota(s) de R$ 5.00 0 \nota(s) de R$ 2.00 MOEDAS: 1 moeda(s) de R$ 1.00 0 moeda(s) de R$ 0.50 0 moeda(s) de R$ 0.25 0 moeda(s) de R$ 0.10 0 moeda(s) de R$ 0.05 1 moeda(s) de R$ 0.01\";}}","2017-05-12 15:08:55","2017-05-12 15:08:55"n"9","1","Joaozi\nho quer calcular e mostrar a qua\ntidade de litros de combustível gastos em uma viagem, ao utilizar um automóvel que faz 12 KM/L. Para isso, ele gostaria que você o auxiliasse através de um simples programa. Para efetuar o cálculo, deve-se for\necer o tempo gasto \na viagem (em horas) e a velocidade média dura\nte a mesma (em km/h). Assim, pode-se obter distâ\ncia percorrida e, em seguida, calcular qua\ntos litros seriam \necessários. Mostre o valor com 3 casas decimais após o po\nto.
+
+E\ntrada: A e\ntrada co\ntém dois i\nteiros. O primeiro é o tempo gasto \na viagem (em horas) e o segu\ndo é a velocidade média dura\nte a mesma (em km/h).
+
+Saída: Imprima a qua\ntidade de litros \necessária para realizar a viagem, com três dígitos após o po\nto decimal
+
+Exemplo de E\ntrada: 10 85 	
+
+Exemplo de Saída: 70.833","a:3:{i:0;a:2:{s:11:\"a\nswerI\nput\";s:5:\"10 85\";s:12:\"a\nswerOutput\";s:6:\"70.833\";}i:1;a:2:{s:11:\"a\nswerI\nput\";s:4:\"2 92\";s:12:\"a\nswerOutput\";s:6:\"15.333\";}i:2;a:2:{s:11:\"a\nswerI\nput\";s:5:\"22 67\";s:12:\"a\nswerOutput\";s:7:\"122.833\";}}","2017-05-12 19:24:53","2017-05-12 19:24:53"n
